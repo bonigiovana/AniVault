@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AniVault - Catálogo de Animes</title>
+
+  <!-- Favicon SVG Inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/global.css?v=999">
+  <link rel="stylesheet" href="assets/css/anime-card.css?v=999">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=999">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Menu Lateral (Sidebar Navigation) -->
+    <aside class="sidebar">
+      <div class="logo" id="logoBtn" style="cursor: pointer;">
+        <span class="logo-icon-glow">A</span>
+        <h2>Ani<span>Vault</span></h2>
+      </div>
+
+      <nav class="nav-menu">
+        <!-- 1. Botão Início -->
+        <a href="#" class="nav-item nav-home-btn active" id="navHome">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Início</span>
+        </a>
+        
+        <!-- 2. Botão Biblioteca com Submenu -->
+        <a href="#" class="nav-item library-item" id="navLibrary">
+          <span class="active-icon-badge">🩵</span>
+          <span class="nav-text">Biblioteca</span>
+        </a>
+        
+        <div class="submenu-wrapper">
+          <div class="submenu-line"></div>
+          <div class="submenu-items">
+            <a href="#" class="sub-item library-sub-item" data-filter="list">Minha Lista</a>
+            <a href="#" class="sub-item library-sub-item" data-filter="watching">Assistindo</a>
+            <a href="#" class="sub-item library-sub-item" data-filter="completed">Concluídos</a>
+            <a href="#" class="sub-item library-sub-item" data-filter="plan">Planejo Assistir</a>
+          </div>
+        </div>
+
+        <!-- 3. Submenu de Categorias -->
+        <a href="#" class="nav-item" id="navCategoriesHeader">
+          <span class="nav-icon">🏷️</span>
+          <span class="nav-text">Categorias</span>
+        </a>
+
+        <div class="submenu-wrapper">
+          <div class="submenu-line"></div>
+          <div class="submenu-items">
+            <a href="#" class="sub-item category-item" data-genre="1">Ação</a>
+            <a href="#" class="sub-item category-item" data-genre="27">Shonen & Seinen</a>
+            <a href="#" class="sub-item category-item" data-genre="10">Fantasia & Isekai</a>
+            <a href="#" class="sub-item category-item" data-genre="7">Mistério</a>
+            <a href="#" class="sub-item category-item" data-genre="24">Ficção Científica</a>
+            <a href="#" class="sub-item category-item" data-genre="22">Romance</a>
+            <a href="#" class="sub-item category-item" data-genre="4">Comédia</a>
+            <a href="#" class="sub-item category-item" data-genre="30">Esportes</a>
+            <a href="#" class="sub-item category-item" data-genre="37">Sobrenatural</a>
+          </div>
+        </div>
+
+        <!-- 4. Descobrir, Comunidade, Perfil -->
+        <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1rem;">
+          <a href="#" class="nav-item discover-item" id="navDiscover">
+            <span class="nav-icon">🧭</span>
+            <span class="nav-text">Descobrir</span>
+          </a>
+          <a href="#" class="nav-item community-item" id="navCommunity">
+            <span class="nav-icon">👥</span>
+            <span class="nav-text">Comunidade</span>
+          </a>
+          <a href="#" class="nav-item profile-item" id="navProfile">
+            <span class="nav-icon">👤</span>
+            <span class="nav-text">Perfil</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      
+      <!-- Cabeçalho Principal e Barra de Pesquisa -->
+      <header class="header-banner">
+        <div class="banner-title">
+          <h1 id="mainPageTitle">AniVault</h1>
+          <p id="mainPageSubtitle">Do clássico ao lançamento: monte sua lista e ative o modo maratona!</p>
+        </div>
+        
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Pesquisar anime..."
+            autocomplete="off"
+          >
+        </div>
+      </header>
+
+      <!-- Banner de Destaque Principal (Hero Banner - Foto 2) -->
+      <div class="hero-banner" id="heroBanner">
+        <div class="hero-content">
+          <div class="hero-badge">🔥 DESTAQUE DA TEMPORADA</div>
+          <h2 id="heroTitle">Sousou no Frieren</h2>
+          <p id="heroSynopsis" class="hero-synopsis">
+            Frieren, uma maga elfa que fez parte do grupo de heróis lendários que derrotou o Rei Demônio, enfrenta a imortalidade enquanto vê seus companheiros humanos partirem.
+          </p>
+          <div class="hero-actions">
+            <button class="hero-btn primary-btn" onclick="handleCardClick(52991)">
+              🩵 Ver Episódios & Progresso
+            </button>
+            <button class="hero-btn secondary-btn">
+              📌 + Minha Lista
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container das Categorias e Carrosséis (Home Page - Foto 2) -->
+      <div class="categories-container" id="mainContentContainer">
+        
+        <!-- 1. Em Alta no Momento -->
+        <section class="category-section">
+          <h3 class="category-title">Em Alta no Momento</h3>
+          <ul class="animes-row" id="topAnimesRow"></ul>
+        </section>
+
+        <!-- 2. Shonen & Seinen -->
+        <section class="category-section">
+          <h3 class="category-title">Shonen & Seinen</h3>
+          <ul class="animes-row" id="shonenRow"></ul>
+        </section>
+
+        <!-- 3. Animes de Ação -->
+        <section class="category-section">
+          <h3 class="category-title">Animes de Ação</h3>
+          <ul class="animes-row" id="actionRow"></ul>
+        </section>
+
+        <!-- 4. Fantasia & Isekai -->
+        <section class="category-section">
+          <h3 class="category-title">Fantasia & Isekai</h3>
+          <ul class="animes-row" id="fantasyRow"></ul>
+        </section>
+
+        <!-- 5. Mistério e Psicológicos -->
+        <section class="category-section">
+          <h3 class="category-title">Mistério e Psicológicos</h3>
+          <ul class="animes-row" id="mysteryRow"></ul>
+        </section>
+
+        <!-- 6. Ficção Científica -->
+        <section class="category-section">
+          <h3 class="category-title">Ficção Científica</h3>
+          <ul class="animes-row" id="scifiRow"></ul>
+        </section>
+
+        <!-- 7. Romance e Drama -->
+        <section class="category-section">
+          <h3 class="category-title">Romance e Drama</h3>
+          <ul class="animes-row" id="romanceRow"></ul>
+        </section>
+
+        <!-- 8. Comédia -->
+        <section class="category-section">
+          <h3 class="category-title">Comédia</h3>
+          <ul class="animes-row" id="comedyRow"></ul>
+        </section>
+
+        <!-- 9. Esportes -->
+        <section class="category-section">
+          <h3 class="category-title">Esportes</h3>
+          <ul class="animes-row" id="sportsRow"></ul>
+        </section>
+
+        <!-- 10. Sobrenatural -->
+        <section class="category-section">
+          <h3 class="category-title">Sobrenatural</h3>
+          <ul class="animes-row" id="supernaturalRow"></ul>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Gaveta Lateral de Episódios (Drawer) -->
+    <aside class="details-drawer" id="detailsDrawer">
+      <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="Fechar">&times;</button>
+      
+      <div class="drawer-header">
+        <img id="drawerCover" src="" alt="Capa do Anime" class="drawer-cover">
+        <h3 id="drawerTitle">Selecione um Anime</h3>
+        <div class="drawer-badges-row">
+          <span id="drawerRating" class="drawer-rating">★ --/10</span>
+          <span id="drawerEpisodesCount" class="meta-chip">🎬 -- eps</span>
+        </div>
+        <p id="drawerSynopsis" class="drawer-synopsis-text">Clique em um anime do catálogo para ver os detalhes, episódios e comentários.</p>
+        <div id="drawerGenres" class="drawer-genres-tags"></div>
+      </div>
+
+      <nav class="drawer-nav-tabs">
+        <button class="drawer-tab-btn active" id="tabBtnEpisodes" data-target="drawerTabEpisodes">📺 Episódios</button>
+        <button class="drawer-tab-btn" id="tabBtnCommunity" data-target="drawerTabCommunity">💬 Comunidade</button>
+      </nav>
+
+      <div class="drawer-content">
+        <div class="drawer-tab-panel active" id="drawerTabEpisodes">
+          <div class="progress-container">
+            <div class="progress-labels">
+              <span id="progressText">0 de 0 assistidos (0%)</span>
+              <span id="remainingText">0 eps restantes</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div id="progressBarFill" class="progress-bar-fill"></div>
+            </div>
+          </div>
+          <ul id="episodesList" class="episodes-list">
+            <li class="empty-msg">Selecione um anime para ver os episódios!</li>
+          </ul>
+        </div>
+
+        <div class="drawer-tab-panel" id="drawerTabCommunity">
+          <div class="community-rating-box">
+            <h4>⭐ Nota dos Usuários do Site</h4>
+            <p class="rating-subtitle">Sua avaliação para este anime:</p>
+            <div class="rating-stars-wrapper">
+              <div class="stars-picker" id="starsPicker">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+              </div>
+              <span class="community-score-text" id="communityScoreText">Média do site: -- (0 votos)</span>
+            </div>
+          </div>
+
+          <div class="community-comments-box">
+            <h4>💬 Comentários da Galera</h4>
+            <form id="commentForm" class="comment-form">
+              <input type="text" id="commentUserName" placeholder="Seu apelido/nick..." required class="comment-input">
+              <textarea id="commentUserText" placeholder="Escreva sua opinião sobre este anime..." required class="comment-textarea"></textarea>
+              <button type="submit" class="comment-submit-btn">Enviar Comentário</button>
+            </form>
+            <div class="comments-list" id="commentsList">
+              <p class="empty-msg">Nenhum comentário ainda. Seja o primeiro a opinar!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Scripts JavaScript -->
+  <script src="assets/js/anime-api.js?v=999"></script>
+  <script src="assets/js/main.js?v=999"></script>
+</body>
+</html>
