@@ -23,7 +23,7 @@ Muito além de um simples catálogo, o AniVault está sendo projetado para ser u
 
 ---
 
-## 🛠️ Tecnologias de Elite Utilizadas
+## 🛠️ Tecnologias 
 
 - **HTML5** Semântico & SEO de alta performance
 - **CSS3 Vanilla** (Variáveis CSS, CSS Grid dinâmico, Glassmorphism, Micro-animações)
@@ -32,7 +32,7 @@ Muito além de um simples catálogo, o AniVault está sendo projetado para ser u
 
 ---
 
-## 🔮 Futuro do AniVault & Visão de Comunidade (Roadmap de Próximos Passos)
+## 🔮 Futuro do AniVault & Visão de Comunidade
 
 Estamos apenas no começo! As próximas atualizações transformarão o AniVault na maior rede de interação entre fãs de animes:
 
@@ -45,5 +45,5 @@ Estamos apenas no começo! As próximas atualizações transformarão o AniVault
 ---
 
 ### 👨‍💻 Desenvolvido por
-Criado com paixão por **[Seu Nome / GitHub]**.  
+**Giovana Boni**.  
 *Feedbacks, sugestões e contribuições são super bem-vindos durante toda esta jornada de desenvolvimento!*
